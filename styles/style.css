@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to bottom right, rgb(211, 134, 35), rgb(240, 44, 44));
+}
+body .container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+body .container .calculator {
+  background-color: #fff;
+  position: relative;
+  height: auto;
+  max-width: 26rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 10rem #000;
+}
+body .container .calculator.dark {
+  background-color: #000;
+}
+body .container .calculator .display-screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 10rem;
+  padding: 0 2rem;
+}
+body .container .calculator .display-screen .display {
+  color: #000;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  overflow-x: scroll;
+  word-wrap: break-word;
+}
+body .container .calculator .display-screen .display::-webkit-scrollbar {
+  display: block;
+  height: 3px;
+}
+body .container .calculator .display-screen .display.dark-words {
+  color: #fff;
+}
+body .container .calculator button {
+  min-height: 4rem;
+  min-width: 4rem;
+  border: 0;
+  margin: 1rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+body .container .calculator button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem #000;
+}
+body .container .calculator button#clear, body .container .calculator button.btn-division, body .container .calculator button.btn-multiply {
+  background-color: rgb(112, 111, 111);
+  color: #fff;
+}
+body .container .calculator button#backspace, body .container .calculator button.btn-minus, body .container .calculator button.btn-plus, body .container .calculator button.btn-equal {
+  background-color: rgb(255, 157, 28);
+  color: #fff;
+}
+body .container .calculator button#equal {
+  min-height: 9.5rem;
+}
+body .container .calculator button.btn-number {
+  background-color: #EFEFEF;
+}
+body .theme-toggler {
+  position: absolute;
+  bottom: 4rem;
+  right: 3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+}
+body .theme-toggler::before {
+  content: "";
+  min-height: 2rem;
+  min-width: 4rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2.5rem;
+  background-color: #333;
+  z-index: -1;
+}
+body .theme-toggler.active {
+  color: #000;
+}
+body .theme-toggler.active::before {
+  background-color: #fff;
+}/*# sourceMappingURL=style.css.map */

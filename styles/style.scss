@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+// color
+$first-row-color:rgb(112, 111, 111);
+$number-color:#EFEFEF;
+$right-first-column:rgb(255, 157, 28);
+$dark:#000;
+$light:#fff;
+
+
+body{
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right,rgb(211, 134, 35),rgb(240, 44, 44));
+
+    .container{
+        min-width: 100vw;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+
+        .calculator{
+            background-color: $light;
+            position: relative;
+            height: auto;
+            max-width: 26rem;
+            padding: 1rem;
+            border-radius: 2rem;
+            box-shadow: 0 0 10rem $dark;
+
+            &.dark{
+                background-color: $dark;
+            }
+
+            .display-screen{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                min-height: 10rem;
+                padding: 0 2rem;
+                .display{
+                    color: $dark;
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                    overflow-x: scroll;
+                    word-wrap: break-word;
+
+                    &::-webkit-scrollbar{
+                        display: block;
+                        height: 3px;
+                    }
+
+                    &.dark-words{
+                        color: $light;
+                    }
+                }
+            }
+            button{
+                min-height: 4rem;
+                min-width: 4rem;
+                border: 0;
+                margin: 1rem;
+                border-radius: 2rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: all .2s ease;
+
+                &:hover{
+                    transform: scale(1.1);
+                    box-shadow: 0 0 1rem $dark;
+                }
+
+                &#clear,&.btn-division,&.btn-multiply{
+                    background-color: $first-row-color;
+                    color: #fff;
+                }
+
+                &#backspace,&.btn-minus,&.btn-plus,&.btn-equal{
+                    background-color:$right-first-column;
+                    color: #fff;
+                }
+
+                &#equal{
+                    min-height: 9.5rem;
+                }
+
+                &.btn-number{
+                    background-color: $number-color;
+                }
+            }
+        }
+    }
+
+    .theme-toggler{
+        position: absolute;
+        bottom: 4rem;
+        right: 3rem;
+        color: $light;
+        cursor: pointer;
+        z-index: 1;
+
+        &::before{
+            content: '';
+            min-height: 2rem;
+            min-width: 4rem;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 2.5rem;
+            background-color: #333;
+            z-index: -1;
+        }
+    }
+    .theme-toggler.active{
+        color: $dark;
+        &::before{
+            background-color: $light;
+        }
+    }
+}
