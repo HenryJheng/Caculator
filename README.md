@@ -1,6 +1,6 @@
 # Caculator
 
- https://azkabanwarden.github.io/Caculator/
+ https://henryjheng.github.io/Caculator/
 
 ![coverPic](https://github.com/AZKABANWARDEN/Caculator/blob/master/cover-pic/cover-pic.png?raw=true)
 
